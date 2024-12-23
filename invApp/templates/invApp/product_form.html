@@ -1,0 +1,28 @@
+<!-- Extend the base layout from the layout.html / Расширьте базовый макет из файла layout.html- -->
+
+{% extends "invApp/layout.html" %}
+<!--Extend the base layout template form the invApp directory /  Расширьте базовый шаблон макета из каталога invApp.-->
+
+{% block title %} Product Form {% endblock %}
+<!--Define the content for the title block, setting the page title to "Product Form" /  Определите содержимое основной надписи, установив заголовок страницы «Форма продукта»-->
+
+{% block content %}
+<!--Begin the content block where the mani page content will go /  Начать блок контента, в котором будет размещаться содержимое страницы руководства.-->
+
+<h1 class="text-center">Product Form</h1>
+<!--Display a heading for the page, centered using Bootstrap classes /  Отображение заголовка страницы по центру с помощью классов Bootstrap.-->
+
+<form method="POST" class="jumbotron">
+<!--Start a from with POST method and a Bootstrap jumbotron class for styling /  Начните с метода POST и класса jumbotron Bootstrap для стилизации-->
+
+    {% csrf_token %}
+<!--    Include the CSRF token for security / Включите токен CSRF для безопасности.-->
+
+    {{form}}
+<!--    Render the fields using Django's form rendering / Отобразите поля, используя рендеринг форм Django.-->
+
+    <button class="btn btn-success btn-block" type="submit">Save Product</button>
+<!--    Submit button styled with Bootstrap classes / Кнопка «Отправить» в стиле классов Bootstrap-->
+</form>
+{% endblock %}
+<!--End the content block / Завершить блок контента-->
